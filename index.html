@@ -2,146 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SafeSecureAudit - Your Cybersecurity Solution</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css'>
   <link rel="icon" href="https://raw.githubusercontent.com/CodeAx1avek/WriteupsFinder/refs/heads/main/photo_2024-12-11_11-45-44.jpg" />
   <meta name="description" content="SafeSecureAudit offers automated website security assessments, vulnerability scanning, and penetration testing tools to ensure your website and web applications are secure.">
   <meta name="robots" content="index, follow" />
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1 {
+      color: #333;  
+    }
+    a {
+      color: #2563eb;  /* A modern royal blue that maintains good contrast */
+    }
+
+    button {
+      transition: all 0.3s ease-in-out;
+      border-radius: 0.375rem;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .form-control {
+      border: 1px solid #ddd;
+      background: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .details summary {
+      cursor: pointer;
+    }
+
+    .details summary:hover {
+      background-color: #f3f4f6;
+    }
+
+    .banner {
+      box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<h1 class="subpixel-antilaliased font-mono text-4xl p-4 text-center mt-8"> 🔒 SafeSecureAudit - Cybersecurity Writeups Finder </h1>
-<div class="text-sm text-center antialiased mt-2"> Maintained by <a href='https://instagram.com/safesecureaudit'>@SafeSecureAudit</a></div>
-<div class="text-sm text-center antialiased mt-2"> Made with ❤️ by <a href='https://x.com/payloadartist'>@payloadartist</a></div>
+  <!-- Header -->
+  <header class="text-center py-8 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+    <h1 class="font-mono text-4xl text-gray-800">🔒 SafeSecureAudit - Cybersecurity Writeups Finder</h1>
+    <div class="text-gray-600 text-sm mt-2">
+      Maintained by <a href='https://instagram.com/safesecureaudit' class="font-bold underline">@SafeSecureAudit</a>
+    </div>
+    <div class="text-gray-600 text-sm mt-2">
+      Made with ❤️ by <a href='https://x.com/payloadartist' class="font-bold underline">@payloadartist</a>
+    </div>
+  </header>
 
-<section class="h-50 p-8">
-  <div class="flex align-center justify-center">
-    <div class="flex-initial">
-      <button value="xss" class="searchfilter font-mono uppercase px-8 py-2 border border-blue-600 text-blue-600 max-w-max shadow-sm hover:shadow-lg">XSS</button>
-    </div>
-    <div class="flex-initial mx-2">
-      <button value="ssrf" class="searchfilter font-mono uppercase px-8 py-2 border border-yellow-600 text-yellow-600 max-w-max shadow-sm hover:shadow-lg">SSRF</button>
-    </div>
-    <div class="flex-initial mr-2">
-      <button value="sql" class="searchfilter uppercase px-8 py-2 border border-gray-600 text-gray-600 max-w-max shadow-sm hover:shadow-lg">SQLi</button>
-    </div>
-    <div class="flex-initial mr-2">
-      <button value="rce" class="searchfilter uppercase px-8 py-2 border border-green-600 text-green-600 max-w-max shadow-sm hover:shadow-lg">RCE</button>
-    </div>
-    <div class="flex-initial mr-2">
-      <button value="idor" class="searchfilter uppercase px-8 py-2 border border-red-600 text-red-600 max-w-max shadow-sm hover:shadow-lg">IDOR</button>
-    </div>
-    <div class="flex-initial mr-2">
-      <button value="injection" class="searchfilter uppercase px-8 py-2 border border-purple-700 text-purple-700 max-w-max shadow-sm hover:shadow-lg">Injections</button>
-    </div>
-    
-  </div>
-  
-  <div class="container mx-auto py-8">
-    <div class="text-xs text-center antialiased mt-2 mb-2 p-2"> Example search: <code><a href="?q=xss">http://writeups.safesecureaudit.com/?q=keyword</a></code></div>
-    <button style="float: right" onclick="downloadObjectAsJson(data)" class="uppercase px-8 py-2 border border-purple-700 text-purple-700 max-w-max shadow-sm hover:shadow-lg">Export JSON</button>
-    <form role="form">
-      <div class="form-group">
-        <input class="form-control w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg font-mono" type="search" id="txt-search"  placeholder="🔍 Search for cybersecurity resources, tools, vulnerabilities, and more...">
+  <!-- Filters Section -->
+  <section class="p-8">
+    <div class="flex flex-wrap justify-center gap-4">
+      <button value="api" class="searchfilter uppercase px-8 py-2 border border-blue-600 text-blue-600 bg-white hover:bg-blue-600 hover:text-white shadow-md">API Security</button>
+      <button value="cloud" class="searchfilter uppercase px-8 py-2 border border-yellow-600 text-yellow-600 bg-white hover:bg-yellow-600 hover:text-white shadow-md">Cloud Misconfig</button>
+      <button value="ai" class="searchfilter uppercase px-8 py-2 border border-gray-600 text-gray-600 bg-white hover:bg-gray-600 hover:text-white shadow-md">AI/ML Attacks</button>
+      <button value="supply" class="searchfilter uppercase px-8 py-2 border border-green-600 text-green-600 bg-white hover:bg-green-600 hover:text-white shadow-md">Supply Chain</button>
+      <button value="zero" class="searchfilter uppercase px-8 py-2 border border-red-600 text-red-600 bg-white hover:bg-red-600 hover:text-white shadow-md">Zero Trust</button>
       </div>
-    </form>
-  
-    <div class="mr-12 lg:px-72 xl:px-72 text-lg grid divide-y divide-gray-500" id="filter-records"></div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<div>
-  <section class="text-gray-700">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="text-center mb-20">
-        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
-          Frequently Asked Questions
-        </h1>
-        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-          Learn more about the types of vulnerabilities and how SafeSecureAudit can help safeguard your systems.
-        </p>
+    <div class="container mx-auto py-8">
+      <div class="text-center text-xs text-gray-500 antialiased mb-4">
+        Example search: <code><a href="?q=xss" class="text-blue-600 underline">http://writeups.safesecureaudit.com/?q=keyword</a></code>
       </div>
+      <button style="float: right" onclick="downloadObjectAsJson(data)" class="uppercase px-8 py-2 border border-purple-700 text-purple-700 bg-white hover:bg-purple-700 hover:text-white shadow-md">Export JSON</button>
+      <form role="form" class="mt-8">
+        <input class="form-control w-full h-16 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-xl shadow-md font-mono" type="search" id="txt-search" placeholder="🔍 Search for cybersecurity resources, tools, vulnerabilities, and more...">
+      </form>
+
+      <div class="mt-8 text-lg grid divide-y divide-gray-300" id="filter-records"></div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-5">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-800">Frequently Asked Questions</h1>
+        <p class="text-gray-600 mt-4">Stay updated on the latest cybersecurity trends and threats. Learn how SafeSecureAudit can safeguard your systems.</p>
+      </div>
+
       <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
         <div class="w-full lg:w-1/2 px-4 py-2">
           <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-              What is an XSS vulnerability?
-            </summary>
+            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">What is API Security Misconfiguration?</summary>
             <span>
-              <a href="https://www.safesecureaudit.com/?q=xss" class="text-blue-600">Cross-Site Scripting (XSS)</a> occurs when an attacker injects malicious scripts into trusted websites. These attacks exploit flaws where user input is not validated or encoded properly.
-              <br><br>
-              Types of XSS:
-              <ul>
-                <li><a href="https://www.safesecureaudit.com/?q=stored+xss" class="text-blue-600">Stored XSS</a></li>
-                <li><a href="https://www.safesecureaudit.com/?q=reflected+xss" class="text-blue-600">Reflected XSS</a></li>
-                <li><a href="https://www.safesecureaudit.com/?q=dom+xss" class="text-blue-600">DOM-based XSS</a></li>
-              </ul>  
+              API Security Misconfiguration occurs when APIs are left exposed due to weak authentication, outdated libraries, or improper settings. Example: A public API endpoint leaking sensitive data without access controls.
             </span>
           </details>
           <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-              What is an IDOR vulnerability?
-            </summary>
+            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">What is Cloud Security Mismanagement?</summary>
             <span>
-              Insecure Direct Object References (IDOR) occur when an application exposes internal object references, allowing unauthorized access to data.
-              <br><br>
-              Example: A URL like `/api/users/:id` where an attacker can modify the `id` parameter to access data of other users.
-            </span>
-          </details>
-          <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-              What is an SSRF vulnerability?
-            </summary>
-            <span>
-              Server-Side Request Forgery (SSRF) allows an attacker to send requests to internal services by exploiting a vulnerability in the server’s request handling.
+              Mismanagement of cloud permissions, data storage, and configurations can lead to critical data exposure. Regular audits and compliance checks help mitigate risks.
             </span>
           </details>
         </div>
+
         <div class="w-full lg:w-1/2 px-4 py-2">
           <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-              What is a SQLi vulnerability?
-            </summary>
-            <span class="px-4 py-2">
-              SQL Injection (SQLi) allows an attacker to manipulate SQL queries by injecting malicious code into user input, leading to unauthorized access to databases.
+            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">What are AI/ML Model Poisoning Attacks?</summary>
+            <span>
+              Injecting malicious data into machine learning training pipelines can compromise model integrity. Ensuring dataset validation helps prevent such issues.
             </span>
           </details>
           <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-              What is an RCE vulnerability?
-            </summary>
-            <span class="px-4 py-2">
-              Remote Code Execution (RCE) vulnerabilities occur when an attacker can execute arbitrary code on the server, leading to potential system compromise.
-            </span>
-          </details>
-          <details class="mb-4">
-            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-             How can I reach you?
-            </summary>
-            <span class="px-4 py-2">
-             If you have any feedback or concerns about SafeSecureAudit, feel free to reach us on <a class="text-blue-600" href="https://instagram.com/safesecureaudit">Instagram</a>.
+            <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">What are Supply Chain Attacks?</summary>
+            <span>
+              Attacks on third-party dependencies or vendors to exploit larger systems. Example: Malicious code injected into open-source libraries.
             </span>
           </details>
         </div>
       </div>
     </div>
   </section>
-</div>
 
-<div class="banner shadow-2xl antialiased" style="float: left; border: 1px solid; position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 255; background: rgb(255,255,255); color: rgb(0,0,0); line-height: 32px; padding: 5px 16px; font-family: arial, sans-serif; font-size: 21px;  bottom: 0px; opacity: 1;">
-  <div class="cookiebanner-close" style="float: right; padding-left: 5px; cursor: pointer;" onclick="Remove(this.parentNode)">✖</div>
-  <span>Do you know we have a <a href="https://safesecureaudit.com" target="_blank" style="border-bottom: 2px dotted #000;">webiste</a> too? 🎉</span> <span style="float:right;" class="px-4">Wanna <a href="https://forms.gle/ft9XNW4qpDmkvrYb7" target="_blank" style="border-bottom: 2px dotted #000;">submit your content?</a> 📝</span>
-</div>
+  <!-- Footer Banner -->
+  <div class="banner shadow-lg fixed bottom-0 left-0 right-0 bg-white text-gray-800 text-lg py-3 px-8">
+    <span>Do you know we have a <a href="https://safesecureaudit.com" target="_blank" class="underline">website</a> too? 🎉</span>
+    <span style="float:right;">Wanna <a href="https://forms.gle/ft9XNW4qpDmkvrYb7" target="_blank" class="underline">submit your content?</a> 📝</span>
+  </div>
 
-<div></div>
-</div>
-<!-- partial -->
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.5/vue.cjs.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>
-<script src='https://writeups.safesecureaudit.com/writeups.js'></script>
-<script src='writeups.js'></script>
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.5/vue.cjs.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>
+  <script src="writeups.js"></script>
+  <script src='https://raw.githubusercontent.com/CodeAx1avek/WriteupsFinder/refs/heads/main/writeups.js'></script>
+</body>
+</html>

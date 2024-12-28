@@ -1,4 +1,16 @@
 var data = [
+  {
+    "title": "Git Exposed! How a Government Website Left Its Secrets Open",
+    "link": "https://medium.com/@sachinkewat809/git-exposed-how-a-government-website-left-its-secrets-open-fc4ebb4a1d46"
+  },
+  {
+    "title": "Exposing Login Page Vulnerabilities with Time-Based SQL Injection",
+    "link": "https://osintteam.blog/exposing-login-page-vulnerabilities-with-time-based-sql-injection-694a04911e93"
+  },
+  {
+    "title": "Exploiting a Vulnerable libssh Service",
+    "link": "https://medium.com/@sachinkewat809/exploiting-a-vulnerable-libssh-service-345198c70eda"
+  }
     {
       title:
         "Lightning Components: A Treatise on Apex Security from an External Perspective",
