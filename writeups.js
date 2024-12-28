@@ -10,7 +10,7 @@ var data = [
   {
     "title": "Exploiting a Vulnerable libssh Service",
     "link": "https://medium.com/@sachinkewat809/exploiting-a-vulnerable-libssh-service-345198c70eda"
-  }
+  },
     {
       title:
         "Lightning Components: A Treatise on Apex Security from an External Perspective",
