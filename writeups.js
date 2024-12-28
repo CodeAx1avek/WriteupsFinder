@@ -181,8 +181,8 @@ var data = [
       if (val.title.search(regex) != -1 || val.link.search(regex) != -1) {
         output += `<div class="row antialiased p-2">
             <a href=${val.link} target="_blank" rel="noopener nofollow noreferrer">
-  ✍️ ${val.title}</a>
-                        </div>`;
+            ✍️ ${val.title}</a>
+          </div>`;
         cresult.push({
           title: `${val.title}`,
           link: `${val.link}`,
